@@ -66,8 +66,6 @@ namespace NBChangePass
 
 
                         user.ChangePassword(currentPwd, password.Password);
-
-                        user.UnlockAccount();
                     }
                 }
 
