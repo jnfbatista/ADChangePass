@@ -34,8 +34,7 @@ namespace NBChangePass
         {
             var uname = username.Text;
             var pwd = password.Password;
-
-
+            
             if (cycleOption.IsChecked.Value)
             {
                 var nCycles = int.Parse(nCycle.Text);
@@ -44,12 +43,12 @@ namespace NBChangePass
             else
             {
                 var newPass = newPassword.Password;
-                Task.Run(() => CyclePasswordAsync(uname, pwd, newPass));
+                Task.Run(() => ChangePass(uname, pwd, newPass));
             }
         }
 
         /// <summary>
-        /// Changes the password in another Thread
+        /// Cycles the password in another Thread
         /// </summary>
         /// <param name="username"></param>
         /// <param name="password"></param>
@@ -116,7 +115,12 @@ namespace NBChangePass
             }
         }
 
-
+        /// <summary>
+        /// Changes the password in another thread
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <param name="newPassword"></param>
         private void ChangePass(string username, string password, string newPassword)
         {
             try
@@ -136,7 +140,7 @@ namespace NBChangePass
                             });
                         }
 
-                        user.ChangePassword(password, new);
+                        user.ChangePassword(password, newPassword);
                     }
                 }
 
