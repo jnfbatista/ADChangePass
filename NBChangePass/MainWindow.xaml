@@ -28,7 +28,7 @@
 
         <Label x:Name="nCycleLabel" FontSize="15" Margin="10,10,10,10" Grid.Column="1" Grid.Row="4">Nº of Cyles</Label>
         <StackPanel x:Name="nCycleContents" Margin="10,10,10,10" Grid.Column="2" Grid.Row="4" Orientation="Horizontal">
-            <TextBox Margin="10,10,10,10" x:Name="nCycle" HorizontalContentAlignment="Center" Width="50">5</TextBox>
+            <TextBox Margin="10,10,10,10" x:Name="nCycle" HorizontalContentAlignment="Center" Width="50" PreviewTextInput="checkNumericInput">5</TextBox>
             <Label FontSize="15" Margin="10,10,10,10">Times</Label>
         </StackPanel>
 
